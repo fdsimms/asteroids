@@ -5,8 +5,22 @@
     <title></title>
   </head>
   <body>
-    <script src="./lib/movingObject.js">
+    <canvas></canvas>
 
+    <script src="./lib/movingObject.js"></script>
+    <script>
+      var canvasEl = document.getElementsByTagName("canvas")[0];
+      canvasEl.height = window.innerHeight;
+      canvasEl.width = window.innerWidth;
+
+      var mo = new Asteroids.movingObject(
+        { pos: [30, 30], vel: [10, 10], radius: 5, color: "#00FF00"}
+      );
+      var ctx = canvasEl.getContext("2d");
+      mo.draw(ctx);      // new Asteroids.Game(
+      //   canvasEl.width,
+      //   canvasEl.height
+      // ).start(canvasEl);
     </script>
   </body>
 </html>
